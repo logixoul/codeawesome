@@ -64,6 +64,13 @@ html, body {
     letter-spacing: 0.5px;
 }
 
+.subtitle2 {
+    font-size: 1.1rem;
+    color: #a0aec0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
 /* Cards Grid */
 .cards-grid {
     display: grid;
@@ -88,7 +95,7 @@ html, body {
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     overflow: hidden;
 }
 
@@ -126,7 +133,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 30px;
     background: rgba(96, 165, 250, 0.1);
     transition: all 0.3s ease;
 }

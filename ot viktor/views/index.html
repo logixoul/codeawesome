@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>Не-сухо програмиране</title>
     <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>
@@ -15,13 +15,13 @@
       <div class="content">
         <!-- Header -->
         <header class="header">
-          <h1 class="title">Applications</h1>
-          <p class="subtitle">Access your services</p>
+          <h1 class="title">Не-сухо програмиране</h1>
+          <p class="subtitle">Възможно ли е?</p>
+          <p class="subtitle2">Аз съм Стефан. Хайде да програмираме заедно.</p>
         </header>
 
         <!-- Cards grid -->
         <div class="cards-grid">
-          {{range .services}}
           <a
             href="{{.URL}}"
             class="card"
@@ -31,16 +31,51 @@
           >
             <div class="card-inner">
               <div class="card-icon">
-                <img src="{{.IconURL}}" alt="{{.Name}}" loading="lazy" />
+                <img src="assets/icon-portfolio.png" alt="{{.Name}}" loading="lazy" />
               </div>
               <div class="card-content">
-                <h2 class="card-title">{{.Name}}</h2>
-                <p class="card-description">{{.Description}}</p>
+                <h2 class="card-title">Примери</h2>
+                <p class="card-description">Вдъхновѝ се</p>
               </div>
             </div>
             <div class="card-border"></div>
           </a>
-          {{end}}
+          <a
+            href="{{.URL}}"
+            class="card"
+            data-title="{{.Name}}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-inner">
+              <div class="card-icon">
+                <img src="assets/icon-blog.png" alt="{{.Name}}" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h2 class="card-title">Блог</h2>
+                <p class="card-description">Почети</p>
+              </div>
+            </div>
+            <div class="card-border"></div>
+          </a>
+          <a
+            href="{{.URL}}"
+            class="card"
+            data-title="{{.Name}}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-inner">
+              <div class="card-icon">
+                <img src="assets/icon-mentoring.png" alt="{{.Name}}" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h2 class="card-title">Менторство</h2>
+                <p class="card-description">Работѝ с мен</p>
+              </div>
+            </div>
+            <div class="card-border"></div>
+          </a>
         </div>
       </div>
     </div>
