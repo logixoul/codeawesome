@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <!-- Particle canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Main container -->
+    <div class="container">
+      <div class="content">
+        <!-- Header -->
+        <header class="header">
+          <h1 class="title">Applications</h1>
+          <p class="subtitle">Access your services</p>
+        </header>
+
+        <!-- Cards grid -->
+        <div class="cards-grid">
+          {{range .services}}
+          <a
+            href="{{.URL}}"
+            class="card"
+            data-title="{{.Name}}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-inner">
+              <div class="card-icon">
+                <img src="{{.IconURL}}" alt="{{.Name}}" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h2 class="card-title">{{.Name}}</h2>
+                <p class="card-description">{{.Description}}</p>
+              </div>
+            </div>
+            <div class="card-border"></div>
+          </a>
+          {{end}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/particles.js"></script>
+    <script src="/assets/cards.js"></script>
+  </body>
+</html>
