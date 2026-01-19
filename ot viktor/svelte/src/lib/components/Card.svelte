@@ -1,14 +1,14 @@
 <script lang="ts">
     //const linkTitle = "click here";
-    let { id, title, description } = $props();
+    let { id, title, description, onclick } = $props();
 </script>
 
 <a
     href="."
     class="card"
     data-title="{id}"
-    target="_blank"
     rel="noopener noreferrer"
+    onclick={()=>onclick(id)}
     >
     <div class="card-inner">
         <div class="card-icon">
