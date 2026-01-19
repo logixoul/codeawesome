@@ -3,6 +3,7 @@
 	import Slideout from '$lib/components/Slideout.svelte';
     import ProjectShowcaseBox from '$lib/components/ProjectShowcaseBox.svelte';
     import { ParticleSystem } from '$lib/particles';
+    import { CardSystem } from '$lib/cards';
 	import { onMount } from 'svelte';
 
 	var currentSlideout = $state('portfolio');
@@ -12,6 +13,8 @@
 
     onMount(() => {
             new ParticleSystem();
+            new CardSystem();
+
     });
 </script>
 
@@ -42,7 +45,7 @@
 			></Card>
 		</div>
 
-		<Slideout html="<h1>{currentSlideout} active</h1>" isCurrent="true"></Slideout>
+		<!--<Slideout html="<h1>{currentSlideout} active</h1>" isCurrent="true"></Slideout>-->
 	</div>
 </div>
 <div class="sectionPortfolio topLevelSection">
@@ -96,7 +99,7 @@
 
 	.sectionPortfolio {
 		width: 100dvw;
-		min-height: 50dvh;
+		min-height: 100dvh;
 		background-color: #d1d1cb;
 	}
 
