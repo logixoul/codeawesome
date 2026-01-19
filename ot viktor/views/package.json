@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/logixoul/html_blurworld#readme",
   "devDependencies": {
-    "vite": "^7.3.0"
+    "vite": "^7.3.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
   }
