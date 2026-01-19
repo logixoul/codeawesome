@@ -4,7 +4,19 @@
  */
 
 class Particle {
-    constructor(canvas) {
+    private canvas: HTMLCanvasElement;
+    public x: number;
+    public y: number;
+    private size: number;
+    private speedX: number;
+    private speedY: number;
+    private opacity: number;
+    private targetOpacity: number;
+    private color: string;
+    private distance: number;
+    private displayOpacity: number;
+
+    constructor(canvas: HTMLCanvasElement) {
         this.canvas = canvas;
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
@@ -15,20 +27,21 @@ class Particle {
         this.targetOpacity = this.opacity;
         this.color = this.getRandomColor();
         this.distance = 0;
+        this.displayOpacity = this.opacity;
     }
 
-    getRandomColor() {
+    private getRandomColor(): string {
         const colors = [
-            'rgba(96, 165, 250, ',   // Blue
-            'rgba(167, 139, 250, ',  // Purple
-            'rgba(244, 114, 182, ',  // Pink
-            'rgba(34, 197, 94, ',    // Green
-            'rgba(59, 130, 246, ',   // Bright Blue
+            "rgba(96, 165, 250, ",   // Blue
+            "rgba(167, 139, 250, ",  // Purple
+            "rgba(244, 114, 182, ",  // Pink
+            "rgba(34, 197, 94, ",    // Green
+            "rgba(59, 130, 246, ",   // Bright Blue
         ];
         return colors[Math.floor(Math.random() * colors.length)];
     }
 
-    update(mouseX, mouseY) {
+    update(mouseX: number, mouseY: number): void {
         // Basic movement
         this.x += this.speedX;
         this.y += this.speedY;
@@ -60,7 +73,9 @@ class Particle {
         }
 
         // Smooth opacity transition
-        const currentOpacity = parseFloat(this.color.match(/[\d.]+/g)[3] || this.color.match(/[\d.]+/g)[2]);
+        const matches = this.color.match(/[\d.]+/g);
+        const opacityToken = matches?.[3] ?? matches?.[2];
+        const currentOpacity = opacityToken ? parseFloat(opacityToken) : this.opacity;
         const newOpacity = currentOpacity + (this.targetOpacity - currentOpacity) * 0.1;
         this.displayOpacity = Math.max(0.1, Math.min(1, newOpacity));
 
@@ -73,8 +88,8 @@ class Particle {
         }
     }
 
-    draw(ctx) {
-        ctx.fillStyle = this.color + this.displayOpacity + ')';
+    draw(ctx: CanvasRenderingContext2D): void {
+        ctx.fillStyle = this.color + this.displayOpacity + ")";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -82,13 +97,22 @@ class Particle {
 }
 
 class ParticleSystem {
+    private canvas!: HTMLCanvasElement;
+    private ctx!: CanvasRenderingContext2D;
+    private particles: Particle[] = [];
+    private mouseX = 0;
+    private mouseY = 0;
+    private particleCount = 80;
+
     constructor() {
-        this.canvas = document.getElementById('particleCanvas');
-        this.ctx = this.canvas.getContext('2d');
-        this.particles = [];
-        this.mouseX = 0;
-        this.mouseY = 0;
-        this.particleCount = 80;
+        const canvas = document.getElementById("particleCanvas") as HTMLCanvasElement | null;
+        const ctx = canvas?.getContext("2d") ?? null;
+        if (!canvas || !ctx) {
+            return;
+        }
+
+        this.canvas = canvas;
+        this.ctx = ctx;
 
         // Set canvas size
         this.resizeCanvas();
@@ -97,37 +121,37 @@ class ParticleSystem {
         this.initializeParticles();
 
         // Event listeners
-        window.addEventListener('resize', () => this.resizeCanvas());
-        document.addEventListener('mousemove', (e) => this.onMouseMove(e));
-        document.addEventListener('mouseleave', () => this.onMouseLeave());
+        window.addEventListener("resize", () => this.resizeCanvas());
+        document.addEventListener("mousemove", (e: MouseEvent) => this.onMouseMove(e));
+        document.addEventListener("mouseleave", () => this.onMouseLeave());
 
         // Start animation loop
         this.animate();
     }
 
-    resizeCanvas() {
+    private resizeCanvas(): void {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
     }
 
-    initializeParticles() {
+    private initializeParticles(): void {
         this.particles = [];
         for (let i = 0; i < this.particleCount; i++) {
             this.particles.push(new Particle(this.canvas));
         }
     }
 
-    onMouseMove(e) {
+    private onMouseMove(e: MouseEvent): void {
         this.mouseX = e.clientX;
         this.mouseY = e.clientY;
     }
 
-    onMouseLeave() {
+    private onMouseLeave(): void {
         this.mouseX = -500;
         this.mouseY = -500;
     }
 
-    connectParticles() {
+    private connectParticles(): void {
         const connectionDistance = 200;
 
         for (let i = 0; i < this.particles.length; i++) {
@@ -149,13 +173,13 @@ class ParticleSystem {
         }
     }
 
-    animate() {
+    private animate(): void {
         // Clear canvas with fade effect
-        this.ctx.fillStyle = 'rgba(10, 14, 39, 0.1)';
+        this.ctx.fillStyle = "rgba(10, 14, 39, 0.1)";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Update and draw particles
-        for (let particle of this.particles) {
+        for (const particle of this.particles) {
             particle.update(this.mouseX, this.mouseY);
             particle.draw(this.ctx);
         }
@@ -169,6 +193,6 @@ class ParticleSystem {
 }
 
 // Initialize particle system when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     new ParticleSystem();
 });
