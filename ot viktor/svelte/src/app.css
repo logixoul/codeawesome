@@ -32,7 +32,7 @@ html, body {
 }
 
 /* Container */
-.landingContainer {
+.topLevelSection {
     position: relative;
     z-index: 10;
     width: 100%;
@@ -47,49 +47,9 @@ html, body {
 
 .content {
     max-width: 1200px;
-    margin: 0 auto;
     width: 100%;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    margin-bottom: 60px;
-    animation: fadeInDown 0.8s ease-out;
-}
-
-.title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -1px;
-}
-
-.subtitle {
-    font-size: 1.1rem;
-    color: #a0aec0;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    margin-bottom: 40px;
-}
-
-.subtitle2 {
-    font-size: 1.1rem;
-    color: #c0cef0;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-/* Cards Grid */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
 
 /* Card Styles */
 .card {
