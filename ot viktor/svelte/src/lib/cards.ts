@@ -3,7 +3,7 @@
  * Handles hover effects, tilt effects, and cursor interactions for cards
  */
 
-class CardSystem {
+export class CardSystem {
     private cards: NodeListOf<HTMLElement>;
     private mouseX = 0;
     private mouseY = 0;
@@ -56,8 +56,3 @@ class CardSystem {
         card.style.opacity = "1";
     }
 }
-
-// Initialize card system when DOM is ready
-document.addEventListener("DOMContentLoaded", () => {
-    new CardSystem();
-});

@@ -96,7 +96,7 @@ class Particle {
     }
 }
 
-class ParticleSystem {
+export class ParticleSystem {
     private canvas!: HTMLCanvasElement;
     private ctx!: CanvasRenderingContext2D;
     private particles: Particle[] = [];
@@ -191,8 +191,3 @@ class ParticleSystem {
         requestAnimationFrame(() => this.animate());
     }
 }
-
-// Initialize particle system when DOM is ready
-document.addEventListener("DOMContentLoaded", () => {
-    new ParticleSystem();
-});
