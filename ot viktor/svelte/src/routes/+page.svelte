@@ -59,7 +59,7 @@
                 <p>Моделиране на капки разтопено стъкло</p>
                 <p>Не-физично-базиран алгоритъм, базиран на "image processing" техники (blur, contrast curves).</p>
                 <p><strong>Език</strong>: TypeScript</p>
-                <p><strong>Библиотеки:</strong> Three.js</p>
+                <p><strong>Библиотеки:</strong> Three.js, WebGL 2</p>
                 '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
@@ -100,7 +100,7 @@
 	.sectionPortfolio {
 		width: 100dvw;
 		min-height: 100dvh;
-		background-color: #d1d1cb;
+		background-color: #f0f0eb;
 	}
 
     .sectionPortfolio h2 {
