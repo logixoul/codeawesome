@@ -1,31 +1,27 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import YoutubeEmbed from './YoutubeEmbed.svelte';
-	import 'vidstack/bundle';
-	import type { MediaPlayerElement } from 'vidstack/elements';
-	import 'vidstack/player';
-	
-	let { id, title, description, onclick } = $props();
-	let player:MediaPlayerElement;
+	import 'plyr/dist/plyr.css';
 
-	onMount(() => {
-		player.addEventListener('media-play-request', () => {
-			console.log("playing");
+	let { id, videoId, title, description, onclick } = $props();
+	let videoEl: HTMLVideoElement;
+
+	onMount(async () => {
+		const { default: Plyr } = await import('plyr');
+		new Plyr(videoEl, {
+			controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
 		});
 	});
 </script>
 
 <div class="projectShowcaseBox">
 	<div class="projectShowcaseVisual">
-		<!--<Youtube id="6-RV5cZRCXs" />-->
-		<media-player autoplay load="play" poster="https://files.vidstack.io/sprite-fight/poster.webp" crossOrigin title="Sprite Fight" src="youtube/6-RV5cZRCXs" bind:this={player}>
-			<media-provider></media-provider>
-			<media-video-layout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"></media-video-layout>
-		</media-player>
+		<video bind:this={videoEl} playsinline>
+			<source src="http://nesuho.stefanteaches.eu/videos/grid-based-fluid-purple.mp4" type="video/mp4">
+		</video>
 	</div>
 	<div class="project-showcase-content">
 		<h2 class="card-title">{title}</h2>
-		<p class="card-description">{@html description}</p>
+		<div class="card-description">{@html description}</div>
 	</div>
 </div>
 
@@ -62,7 +58,7 @@
 		width: 280px;
 		height: 158px;
 	}
-	media-player {
+	.projectShowcaseVisual :global(.plyr) {
 		width: 280px;
 		height: 158px;
 		border-radius: 20px;

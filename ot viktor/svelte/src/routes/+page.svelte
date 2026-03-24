@@ -36,10 +36,10 @@
                 }
             }
 			></Card>
-			<Card id="blog" title="Статии" description="Почети" onclick={setCurrentSlideout}></Card>
+			<!--<Card id="blog" title="Статии" description="Почети" onclick={setCurrentSlideout}></Card>-->
 			<Card
 				id="mentoring"
-				title="Менторство"
+				title="Уроци/Менторство"
 				description="Работѝ с мен"
 				onclick={setCurrentSlideout}
 			></Card>
@@ -55,6 +55,7 @@
 			<ProjectShowcaseBox
 				id="erosion"
 				title="Стъкло"
+                videoId="6-RV5cZRCXs"
 				description='
                 <p>Моделиране на капки разтопено стъкло</p>
                 <p>Не-физично-базиран алгоритъм, базиран на "image processing" техники (blur, contrast curves).</p>

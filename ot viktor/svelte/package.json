@@ -17,7 +17,7 @@
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.39.1",
 		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.50.0",
+		"@sveltejs/kit": "^2.55.0",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@types/node": "^24",
 		"eslint": "^9.39.1",
@@ -35,6 +35,6 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
-		"vidstack": "^1.12.13"
+		"plyr": "^3.8.4"
 	}
 }
