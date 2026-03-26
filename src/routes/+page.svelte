@@ -58,9 +58,9 @@
 				description='
                 <p>Моделиране на капки разтопено стъкло</p>
                 <p>Не-физично-базиран алгоритъм, базиран на "image processing" техники (blur, contrast curves).</p>
+                <a href="https://experiments.stefanteaches.eu/glass-modeling/">Пробвай го в браузъра си!</a>
                 <p><strong>Език</strong>: TypeScript</p>
                 <p><strong>Библиотеки:</strong> Three.js, WebGL 2</p>
-                <p><a href="
                 '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
