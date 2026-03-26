@@ -53,22 +53,42 @@
 		<h2>Проекти</h2>
 		<div class="cards-grid">
 			<ProjectShowcaseBox
-				id="erosion"
 				title="Стъкло"
-                videoId="6-RV5cZRCXs"
+                videoUrl="http://nesuho.stefanteaches.eu/videos/glass-modeling.mp4"
 				description='
                 <p>Моделиране на капки разтопено стъкло</p>
                 <p>Не-физично-базиран алгоритъм, базиран на "image processing" техники (blur, contrast curves).</p>
                 <p><strong>Език</strong>: TypeScript</p>
                 <p><strong>Библиотеки:</strong> Three.js, WebGL 2</p>
+                <p><a href="
                 '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
 			<ProjectShowcaseBox
-				id="fluidSim"
 				title="Флуидна симулация"
+                videoUrl="http://nesuho.stefanteaches.eu/videos/grid-based-fluid-purple.mp4"
 				description="
                     <p>Базирана на двумерен масив, а не на частици (particles).</p>
+                    <p><strong>Език</strong>: C++</p>
+                    <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
+                    "
+				onclick={setCurrentSlideout}
+			></ProjectShowcaseBox>
+            <ProjectShowcaseBox
+				title="BlurWorld"
+                videoUrl="http://nesuho.stefanteaches.eu/videos/blurworld.mp4"
+				description="
+                    <p>Игра тип 'platformer'/'2d shooter'. </p>
+                    <p><strong>Език</strong>: C#</p>
+                    <p><strong>Библиотеки</strong>: OpenGL, Qt</p>
+                    "
+				onclick={setCurrentSlideout}
+			></ProjectShowcaseBox>
+            <ProjectShowcaseBox
+				title="Мултимащабен растеж на кристали"
+                videoUrl="http://nesuho.stefanteaches.eu/videos/multiscale-growth-sharp.mp4"
+				description="
+                    <p>Визуален експеримент. Работи едновременно на различни мащаби - фин, среден, едър.</p>
                     <p><strong>Език</strong>: C++</p>
                     <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
                     "
@@ -108,6 +128,10 @@
         color: black;
         font-style: italic;
         margin-bottom: 20px;
+    }
+
+    .sectionPortfolio .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
     }
 
     .subtitle {

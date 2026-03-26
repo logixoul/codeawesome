@@ -2,21 +2,21 @@
 	import { onMount } from 'svelte';
 	import 'plyr/dist/plyr.css';
 
-	let { id, videoId, title, description, onclick } = $props();
+	let { videoUrl, title, description, onclick } = $props();
 	let videoEl: HTMLVideoElement;
 
 	onMount(async () => {
 		const { default: Plyr } = await import('plyr');
 		new Plyr(videoEl, {
-			controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+			controls: ['play', 'progress', 'volume', 'fullscreen']
 		});
 	});
 </script>
 
 <div class="projectShowcaseBox">
 	<div class="projectShowcaseVisual">
-		<video bind:this={videoEl} playsinline>
-			<source src="http://nesuho.stefanteaches.eu/videos/grid-based-fluid-purple.mp4" type="video/mp4">
+		<video bind:this={videoEl} playsinline data-plyr-config='hideControls: true'>
+			<source src={videoUrl} type="video/mp4">
 		</video>
 	</div>
 	<div class="project-showcase-content">
