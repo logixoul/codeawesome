@@ -50,7 +50,7 @@
 </div>
 <div class="sectionPortfolio topLevelSection">
 	<div class="content">
-		<h2>Проекти</h2>
+		<img alt="Проекти" src="/images/projects-header.png" width="230" height="auto" style="display: block; margin: 0 auto 40px;" />
 		<div class="cards-grid">
 			<ProjectShowcaseBox
 				title="Стъкло"
@@ -119,17 +119,13 @@
     .title {
         font-size: 3.5rem;
         font-weight: 700;
+        font-family: 'Monaco';
         margin-bottom: 10px;
         background: linear-gradient(135deg, var(--blue-gradient-start) 0%, var(--blue-gradient-end) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         letter-spacing: -1px;
-        font-family: 'Monaco';
-        /*filter: drop-shadow(0 5px 1px rgba(0, 0, 0, 1.0))
-                drop-shadow(0 6px 2px rgba(0, 0, 0, 1.0))
-                drop-shadow(0 7px 4px rgba(0, 0, 0, 1.0))
-                drop-shadow(0 8px 8px rgba(0, 0, 0, 1.0));*/
         filter:
             drop-shadow(0 1px 0px #ffffff)
             drop-shadow(0 5px 1px #00000080);
@@ -140,22 +136,36 @@
 		width: 100dvw;
 		min-height: 100dvh;
 		background-color: #ffffff;
-        /*background-image: url('/images/lxBamboo.png');*/
+        background-image: url('/images/watercolor.jpg');
+        background-size: cover;
 	}
 
-    .sectionPortfolio .content {
-        background-color: #00000080;
-        backdrop-filter: blur(20px);
-    }
-
     .sectionPortfolio h2 {
-        color: black;
-        font-style: italic;
+        background: linear-gradient(135deg, var(--blue-gradient-start) 0%, var(--blue-gradient-end) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        font-size: 3.5rem;
+        font-weight: 700;
+
+        font-family: "Monaco";
+        text-align: center;
         margin-bottom: 20px;
+        letter-spacing: -1px;
+        filter:
+            drop-shadow(0 1px 0px #000000);
+
     }
 
     .sectionPortfolio .cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+        .sectionPortfolio .cards-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     .subtitle {

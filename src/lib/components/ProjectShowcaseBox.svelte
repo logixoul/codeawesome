@@ -35,23 +35,23 @@
 	}
 
 	.projectShowcaseBox {
+	    backdrop-filter: blur(20px);
+
 		background-color: rgba(0, 0, 0, 0.02);
 		border: 2px solid rgba(0, 0, 0, 0.02);
 		/*border-collapse: collapse;*/
 		display: flex;
 		flex-direction: row;
-		border-radius: 20px;
+		border-radius: 8px;
 		padding: 20px;
 		transition: background-color 500ms, border-color 500ms, box-shadow 500ms;
+		box-shadow: 
+			0px 0px 16px #00000020,
+			0px 0px 32px #00000020,
+			0px 0px 64px #00000020
+		;
 	}
 	.projectShowcaseBox:hover {
-		box-shadow: 
-			var(--shadow-color) 0px 0px 16px,
-			var(--shadow-color) 0px 0px 32px,
-			var(--shadow-color) 0px 0px 64px
-		;
-		border-color: lightblue;
-		background: white;
 	}
 	.projectShowcaseVisual {
 		margin-right: 20px;
