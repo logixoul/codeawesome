@@ -85,7 +85,7 @@
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
             <ProjectShowcaseBox
-				title="Мултимащабен растеж на кристали"
+				title="Мултимащабен/фрактален растеж на кристали"
                 videoUrl="http://nesuho.stefanteaches.eu/videos/multiscale-growth-sharp.mp4"
 				description="
                     <p>Визуален експеримент. Работи едновременно на различни мащаби - фин, среден, едър.</p>
