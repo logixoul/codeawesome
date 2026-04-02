@@ -94,7 +94,6 @@ html, body {
     opacity: 0;
     pointer-events: none;
     z-index: 1;
-    transition: opacity 0.15s linear;
 }
 
 .card:hover::before {
@@ -178,22 +177,35 @@ html, body {
     border: 1px solid #00000080;
 
     pointer-events: none;
-    animation: borderGradientFadeOut 0.15s linear both;
+}
+
+.card-border.portfolio {
+}
+
+.card:hover .card-border.portfolio {
+    border-image: linear-gradient(135deg, #3acfd5 0%, #3a4ed5 100%) 1;
+    box-shadow: 0 0 20px rgb(0, 128, 255);
+}
+
+.card-border.mentoring {
+}
+
+.card:hover .card-border.mentoring {
+    border-image: linear-gradient(135deg, #ff47f3 0%, #304cff 100%) 1;
+    
 }
 
 .card:hover .card-border {
-    animation: borderGradientFade 0.15s linear both;
-    box-shadow: 0 0 20px rgb(0, 128, 255);
     transition: box-shadow 0.15s linear;
     border-width: 4px;
-    border-style: solid;}
+    border-style: solid;
+}
 
 @keyframes borderGradientFade {
     from {
         border-image: linear-gradient(135deg, #3acfd5 0%, #3a4ed5 0%) 1;
     }
     to {
-        border-image: linear-gradient(135deg, #3acfd5 0%, #3a4ed5 100%) 1;
     }
 }
 
@@ -203,6 +215,25 @@ html, body {
     }
     to {
         border-image: linear-gradient(135deg, #3acfd5 0%, #3a4ed5 0%) 1;
+    }
+}
+
+@keyframes borderGradientFadeReddish {
+    from {
+    }
+
+    to {
+        border-image: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%) 1;
+    }
+}
+
+@keyframes borderGradientFadeOutReddish {
+    from {
+        border-image: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%) 1;
+    }
+
+    to {
+        border-image: linear-gradient(135deg, #ff6b6b 0%, #ff4757 0%) 1;
     }
 }
 

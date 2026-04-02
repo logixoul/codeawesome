@@ -19,7 +19,7 @@
             <p class="card-description">{description}</p>
         </div>
     </div>
-    <div class="card-border"></div>
+    <div class="card-border {id}"></div>
 </a>
 
 <style>
