@@ -37,19 +37,14 @@
 	.projectShowcaseBox {
 	    backdrop-filter: blur(20px);
 
-		background-color: rgba(0, 0, 0, 0.02);
-		border: 2px solid rgba(0, 0, 0, 0.02);
+		background-color: #ffffff60;
+		border: 1px solid rgba(0, 0, 0, 0.2);
 		/*border-collapse: collapse;*/
 		display: flex;
 		flex-direction: row;
 		border-radius: 8px;
 		padding: 20px;
 		transition: background-color 500ms, border-color 500ms, box-shadow 500ms;
-		box-shadow: 
-			0px 0px 16px #00000020,
-			0px 0px 32px #00000020,
-			0px 0px 64px #00000020
-		;
 	}
 	.projectShowcaseBox:hover {
 	}
@@ -61,6 +56,6 @@
 	.projectShowcaseVisual :global(.plyr) {
 		width: 280px;
 		height: 158px;
-		border-radius: 20px;
+		border-radius: 8px;
 	}
 </style>

@@ -138,25 +138,14 @@
 		background-color: #ffffff;
         background-image: url('/images/watercolor.jpg');
         background-size: cover;
+        box-shadow:
+            inset 0 4px 2px #ffffff,
+            0 0 120px #000000ff,
+            0 0 120px #00000080
+            ;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
 	}
-
-    .sectionPortfolio h2 {
-        background: linear-gradient(135deg, var(--blue-gradient-start) 0%, var(--blue-gradient-end) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-
-        font-size: 3.5rem;
-        font-weight: 700;
-
-        font-family: "Monaco";
-        text-align: center;
-        margin-bottom: 20px;
-        letter-spacing: -1px;
-        filter:
-            drop-shadow(0 1px 0px #000000);
-
-    }
 
     .sectionPortfolio .cards-grid {
         grid-template-columns: repeat(2, 1fr);
