@@ -104,16 +104,22 @@
         text-align: center;
         margin-bottom: 60px;
         animation: fadeInDown 0.8s ease-out;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 1.0),
+            0 2px 2px rgba(0, 0, 0, 1.0),
+            0 3px 4px rgba(0, 0, 0, 1.0),
+            0 4px 8px rgba(0, 0, 0, 1.0);
+
     }
 
     .title {
         font-size: 3.5rem;
         font-weight: 700;
         margin-bottom: 10px;
-        background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
-        -webkit-background-clip: text;
+        color: #e0ffc0;
+        sbackground-color: #00000080;
+        /*-webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;
+        background-clip: text;*/
         letter-spacing: -1px;
     }
 
@@ -136,7 +142,7 @@
 
     .subtitle {
         font-size: 1.1rem;
-        color: #a0aec0;
+        color: white;
         font-weight: 300;
         letter-spacing: 0.5px;
         margin-bottom: 40px;
@@ -144,7 +150,7 @@
 
     .subtitle2 {
         font-size: 1.1rem;
-        color: #c0cef0;
+        color: white;
         font-weight: bold;
         letter-spacing: 0.5px;
     }
@@ -154,6 +160,9 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
     }
 
 </style>

@@ -41,7 +41,7 @@ export class CardSystem {
         const rotateY = (centerX - e.clientX) / 10;
 
         // Apply 3D tilt transform
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+        //card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
 
         // Update mouse position for gradient background effect
         const x = ((e.clientX - rect.left) / rect.width) * 100;

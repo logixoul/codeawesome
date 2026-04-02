@@ -175,17 +175,17 @@ export class ParticleSystem {
 
     private animate(): void {
         // Clear canvas with fade effect
-        this.ctx.fillStyle = "rgba(10, 14, 39, 0.1)";
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        //this.ctx.fillStyle = "rgba(10, 14, 39, 0.1)";
+        //this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Update and draw particles
         for (const particle of this.particles) {
             particle.update(this.mouseX, this.mouseY);
-            particle.draw(this.ctx);
+            //particle.draw(this.ctx);
         }
 
         // Draw connections between particles
-        this.connectParticles();
+        //this.connectParticles();
 
         // Continue animation
         requestAnimationFrame(() => this.animate());
