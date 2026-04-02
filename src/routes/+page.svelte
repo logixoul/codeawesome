@@ -158,6 +158,9 @@
         font-weight: 300;
         letter-spacing: 0.5px;
         margin-bottom: 40px;
+        filter:
+            drop-shadow(0 5px 1px #00000080);
+
     }
 
     .subtitle2 {
@@ -165,6 +168,8 @@
         color: white;
         font-weight: bold;
         letter-spacing: 0.5px;
+        filter:
+            drop-shadow(0 5px 1px #00000080);
     }
 
     /* Cards Grid */
