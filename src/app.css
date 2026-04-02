@@ -38,6 +38,7 @@ html, body {
     height: 100%;
     z-index: 1;
     display: block;
+    mix-blend-mode: screen;
 }
 
 /* Container */
