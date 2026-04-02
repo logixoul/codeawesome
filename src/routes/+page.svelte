@@ -107,8 +107,8 @@
 
     }
 
-    .content {
-                background-color: #00000080;
+    .landingContainer .content {
+        background-color: #00000080;
     }
 
     :root {
@@ -139,8 +139,14 @@
 	.sectionPortfolio {
 		width: 100dvw;
 		min-height: 100dvh;
-		background-color: #f0f0eb;
+		background-color: #ffffff;
+        /*background-image: url('/images/lxBamboo.png');*/
 	}
+
+    .sectionPortfolio .content {
+        background-color: #00000080;
+        backdrop-filter: blur(20px);
+    }
 
     .sectionPortfolio h2 {
         color: black;
@@ -177,9 +183,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 800px;
     }
 
 </style>

@@ -3,6 +3,34 @@
  * Falling snowflake-like glowing particles with wind turbulence
  */
 
+const GLOW_SPRITE_RES = 64;
+
+function createGlowSprite(): HTMLCanvasElement {
+    const offscreen = document.createElement("canvas");
+    offscreen.width = GLOW_SPRITE_RES;
+    offscreen.height = GLOW_SPRITE_RES;
+    const ctx = offscreen.getContext("2d")!;
+    const imageData = ctx.createImageData(GLOW_SPRITE_RES, GLOW_SPRITE_RES);
+    const half = GLOW_SPRITE_RES / 2;
+    for (let py = 0; py < GLOW_SPRITE_RES; py++) {
+        for (let px = 0; px < GLOW_SPRITE_RES; px++) {
+            const dx = (px + 0.5 - half) / half;
+            const dy = (py + 0.5 - half) / half;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist >= 1.0) continue;
+            const alpha = Math.pow(1.0 - dist, 2.0);
+            const idx = (py * GLOW_SPRITE_RES + px) * 4;
+            const brightness = Math.round(alpha * 255);
+            imageData.data[idx]     = brightness;
+            imageData.data[idx + 1] = brightness;
+            imageData.data[idx + 2] = brightness;
+            imageData.data[idx + 3] = 255;
+        }
+    }
+    ctx.putImageData(imageData, 0, 0);
+    return offscreen;
+}
+
 class Particle {
     private canvas: HTMLCanvasElement;
     public x: number;
@@ -19,12 +47,10 @@ class Particle {
         this.x = Math.random() * canvas.width;
         this.y = randomY ? Math.random() * canvas.height : -Math.random() * 20;
         this.size = Math.random() * 1.8 + 0.6;
-        this.size *= 3; // Scale up for better visibility
+        this.size *= 6; // Scale up for better visibility
         this.speedY = Math.random() * 0.7 + 0.25;
-        this.speedY *= 2.0; // faster fall speed for more dynamic effect
         this.opacity = Math.random() * 0.55 + 0.25;
         this.driftAmp = Math.random() * 0.7 + 0.15;
-        this.driftAmp *= 2.0; // stronger horizontal drift for more dynamic effect
         this.driftPhase = Math.random() * Math.PI * 2;
         this.driftFreq = Math.random() * 0.018 + 0.004;
     }
@@ -46,16 +72,9 @@ class Particle {
         }
     }
 
-    draw(ctx: CanvasRenderingContext2D): void {
-        ctx.save();
+    draw(ctx: CanvasRenderingContext2D, glowSprite: HTMLCanvasElement): void {
         //ctx.globalAlpha = this.opacity;
-        ctx.shadowBlur = this.size;
-        ctx.shadowColor = `rgba(0, 255, 255)`;
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+        ctx.drawImage(glowSprite, this.x - this.size, this.y - this.size, this.size * 2, this.size * 2);
     }
 }
 
@@ -64,6 +83,7 @@ export class ParticleSystem {
     private ctx!: CanvasRenderingContext2D;
     private particles: Particle[] = [];
     private particleCount = 80;
+    private glowSprite!: HTMLCanvasElement;
 
     constructor() {
         const canvas = document.getElementById("particleCanvas") as HTMLCanvasElement | null;
@@ -74,6 +94,7 @@ export class ParticleSystem {
 
         this.canvas = canvas;
         this.ctx = ctx;
+        this.glowSprite = createGlowSprite();
 
         this.resizeCanvas();
         this.initializeParticles();
@@ -100,8 +121,9 @@ export class ParticleSystem {
 
         for (const particle of this.particles) {
             particle.update();
-            particle.draw(this.ctx);
+            particle.draw(this.ctx, this.glowSprite);
         }
+        this.ctx.globalAlpha = 1;
 
         requestAnimationFrame(() => this.animate());
     }
