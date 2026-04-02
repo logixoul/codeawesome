@@ -104,23 +104,35 @@
         text-align: center;
         margin-bottom: 60px;
         animation: fadeInDown 0.8s ease-out;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 1.0),
-            0 2px 2px rgba(0, 0, 0, 1.0),
-            0 3px 4px rgba(0, 0, 0, 1.0),
-            0 4px 8px rgba(0, 0, 0, 1.0);
 
+    }
+
+    .content {
+                background-color: #00000080;
+    }
+
+    :root {
+        --blue-gradient-start: #1e63e3;
+        --blue-gradient-end: #00d7ff;
     }
 
     .title {
         font-size: 3.5rem;
         font-weight: 700;
         margin-bottom: 10px;
-        color: #e0ffc0;
-        sbackground-color: #00000080;
-        /*-webkit-background-clip: text;
+        background: linear-gradient(135deg, var(--blue-gradient-start) 0%, var(--blue-gradient-end) 100%);
+        -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;*/
+        background-clip: text;
         letter-spacing: -1px;
+        font-family: 'Monaco';
+        /*filter: drop-shadow(0 5px 1px rgba(0, 0, 0, 1.0))
+                drop-shadow(0 6px 2px rgba(0, 0, 0, 1.0))
+                drop-shadow(0 7px 4px rgba(0, 0, 0, 1.0))
+                drop-shadow(0 8px 8px rgba(0, 0, 0, 1.0));*/
+        filter:
+            drop-shadow(0 1px 0px #ffffff)
+            drop-shadow(0 5px 1px #00000080);
     }
 
 
