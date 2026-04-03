@@ -144,6 +144,8 @@ html, body {
     flex-direction: column;
     justify-content: flex-start;
     gap: 8px;
+
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 1.0);
 }
 
 .card-title {
@@ -180,18 +182,23 @@ html, body {
 }
 
 .card-border.portfolio {
+    background-image: url("/images/ahaa.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-image: linear-gradient(135deg, #3acfd5 0%, #3a4ed5 100%) 1;
 }
 
 .card:hover .card-border.portfolio {
-    border-image: linear-gradient(135deg, #3acfd5 0%, #3a4ed5 100%) 1;
     box-shadow: 0 0 20px rgb(0, 128, 255);
 }
 
 .card-border.mentoring {
-}
+    background-image: url("/images/icon-mentoring.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-image: linear-gradient(135deg, #ff47f3 0%, #304cff 100%) 1;}
 
 .card:hover .card-border.mentoring {
-    border-image: linear-gradient(135deg, #ff47f3 0%, #304cff 100%) 1;
     box-shadow: 0 0 20px color-mix(in srgb, #ff47f3 50%, #304cff 50%);
 }
 
