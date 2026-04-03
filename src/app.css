@@ -173,10 +173,10 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 5px;
     background: #00000060;
     outline: 1px solid #ffffff80;
     border: 1px solid #00000080;
+    box-sizing: border-box;
 
     pointer-events: none;
 }
@@ -189,7 +189,10 @@ html, body {
 }
 
 .card:hover .card-border.portfolio {
-    box-shadow: 0 0 20px rgb(0, 128, 255);
+    box-shadow:
+        0 0 20px rgb(0, 128, 255),
+        0 0 40px rgb(0, 128, 255)
+        ;
 }
 
 .card-border.mentoring {
@@ -199,7 +202,9 @@ html, body {
     border-image: linear-gradient(135deg, #ff47f3 0%, #304cff 100%) 1;}
 
 .card:hover .card-border.mentoring {
-    box-shadow: 0 0 20px color-mix(in srgb, #ff47f3 50%, #304cff 50%);
+    --mid-purple: color-mix(in srgb, #ff47f3 50%, #304cff 50%);
+    box-shadow: 0 0 20px var(--mid-purple),
+                0 0 40px var(--mid-purple);
 }
 
 .card:hover .card-border {
@@ -211,6 +216,7 @@ html, body {
 /* Card hover effects */
 .card-border:hover {
     background: rgba(20, 30, 55, 0.8);
+    outline: 0px solid transparent;
     transform: translateY(-8px);
 }
 
