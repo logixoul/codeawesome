@@ -108,7 +108,13 @@
     }
 
     .landingContainer .content {
-        background-color: #00000080;
+        background-color: #000000c0;
+        box-shadow: 0 0 120px #000000ff,
+            0 0 60px #000000;
+        border-top: 1px solid #ffffff50;
+        border-left: 1px solid #00000080;
+        border-right: 1px solid #00000080;
+        border-bottom: 1px solid #00000080;
     }
 
     :root {
