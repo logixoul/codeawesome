@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'Monaco';
-    src: URL('Monaco.ttf') format('truetype');
+    src: url('/Monaco.ttf') format('truetype');
 }
 
 html, body {
