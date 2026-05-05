@@ -1,1 +1,0 @@
-Note: the `wrangler.jsonc` file's reason for existence is Cloudflare Pages.

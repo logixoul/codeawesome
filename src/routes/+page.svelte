@@ -54,7 +54,7 @@
 		<div class="cards-grid">
 			<ProjectShowcaseBox
 				title="Стъкло"
-                videoUrl="http://nesuho.stefanteaches.eu/videos/glass-modeling.mp4"
+                videoUrl="https://content.stefanteaches.eu/videos/glass-modeling.mp4"
 				description='
                 <p>Моделиране на капки разтопено стъкло</p>
                 <p>Не-физично-базиран алгоритъм, базиран на "image processing" техники (blur, contrast curves).</p>
@@ -66,7 +66,7 @@
 			></ProjectShowcaseBox>
 			<ProjectShowcaseBox
 				title="Флуидна симулация"
-                videoUrl="http://nesuho.stefanteaches.eu/videos/grid-based-fluid-purple.mp4"
+                videoUrl="https://content.stefanteaches.eu/videos/grid-based-fluid-purple.mp4"
 				description="
                     <p>Базирана на двумерен масив, а не на частици (particles).</p>
                     <p><strong>Език</strong>: C++</p>
@@ -76,7 +76,7 @@
 			></ProjectShowcaseBox>
             <ProjectShowcaseBox
 				title="BlurWorld"
-                videoUrl="http://nesuho.stefanteaches.eu/videos/blurworld.mp4"
+                videoUrl="https://content.stefanteaches.eu/videos/blurworld.mp4"
 				description="
                     <p>Игра тип 'platformer'/'2d shooter'. </p>
                     <p><strong>Език</strong>: C#</p>
@@ -86,7 +86,7 @@
 			></ProjectShowcaseBox>
             <ProjectShowcaseBox
 				title="Мултимащабно анти-изглаждане"
-                videoUrl="http://nesuho.stefanteaches.eu/videos/multiscale-growth-sharp.mp4"
+                videoUrl="https://content.stefanteaches.eu/videos/multiscale-growth-sharp.mp4"
 				description="
                     <p>Визуален експеримент. Работи едновременно на различни мащаби - фин, среден, едър.</p>
                     <p><strong>Език</strong>: C++</p>
