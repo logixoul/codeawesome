@@ -4,6 +4,9 @@
  */
 
 const GLOW_SPRITE_RES = 64;
+const FRAME_TIME_MS = 1000 / 60;
+// avoid large frame deltas (e.g. when the tab is inactive) to prevent particles from flying off-screen
+const MAX_FRAME_DELTA = 3;
 
 function createGlowSprite(): HTMLCanvasElement {
     const offscreen = document.createElement("canvas");
@@ -55,11 +58,11 @@ class Particle {
         this.driftFreq = Math.random() * 0.018 + 0.004;
     }
 
-    update(): void {
-        this.y += this.speedY;
+    update(delta = 1): void {
+        this.y += this.speedY * delta;
 
-        this.driftPhase += this.driftFreq;
-        this.x += Math.sin(this.driftPhase) * this.driftAmp;
+        this.driftPhase += this.driftFreq * delta;
+        this.x += Math.sin(this.driftPhase) * this.driftAmp * delta;
 
         // Wrap left/right
         if (this.x < 0) this.x += this.canvas.width;
@@ -84,6 +87,7 @@ export class ParticleSystem {
     private particles: Particle[] = [];
     private particleCount = 80;
     private glowSprite!: HTMLCanvasElement;
+    private lastFrameTime?: number;
 
     constructor() {
         const canvas = document.getElementById("particleCanvas") as HTMLCanvasElement | null;
@@ -116,15 +120,21 @@ export class ParticleSystem {
         }
     }
 
-    private animate(): void {
+    private animate(timestamp = performance.now()): void {
+        const delta =
+            this.lastFrameTime === undefined
+                ? 1
+                : Math.min((timestamp - this.lastFrameTime) / FRAME_TIME_MS, MAX_FRAME_DELTA);
+        this.lastFrameTime = timestamp;
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         for (const particle of this.particles) {
-            particle.update();
+            particle.update(delta);
             particle.draw(this.ctx, this.glowSprite);
         }
         this.ctx.globalAlpha = 1;
 
-        requestAnimationFrame(() => this.animate());
+        requestAnimationFrame((nextTimestamp) => this.animate(nextTimestamp));
     }
 }
