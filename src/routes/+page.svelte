@@ -139,13 +139,13 @@
 
 
 	.sectionPortfolio {
-		width: 100dvw;
+        width: 100%;
 		min-height: 100dvh;
 		background-color: #ffffff;
         background-image: url('/images/watercolor.jpg');
         background-size: cover;
         box-shadow:
-            inset 0 4px 2px #ffffff,
+            inset 0 4px 1px #ffffff80,
             0 0 120px #000000ff,
             0 0 120px #00000080
             ;
@@ -153,13 +153,25 @@
         border-top-right-radius: 40px;
 	}
 
-    .sectionPortfolio .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .sectionPortfolio .content {
+        width: min(100%, 78rem);
     }
 
-    @media (max-width: 640px) {
+    .sectionPortfolio .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 900px) {
+        .landingContainer .content {
+            width: min(100%, 36rem);
+        }
+
         .sectionPortfolio .cards-grid {
             grid-template-columns: 1fr;
+        }
+
+        .sectionPortfolio {
+            background-size: contain;
         }
     }
 
@@ -169,6 +181,9 @@
         font-weight: 300;
         letter-spacing: 0.5px;
         margin-bottom: 40px;
+        margin-inline: auto;
+        max-width: 26rem;
+        text-wrap: balance;
         filter:
             drop-shadow(0 5px 1px #00000080);
 
@@ -179,6 +194,9 @@
         color: white;
         font-weight: bold;
         letter-spacing: 0.5px;
+        margin-inline: auto;
+        max-width: 28rem;
+        text-wrap: balance;
         filter:
             drop-shadow(0 5px 1px #00000080);
     }
@@ -186,8 +204,33 @@
     /* Cards Grid */
     .cards-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+        gap: clamp(18px, 3vw, 30px);
+    }
+
+    @media (max-width: 640px) {
+        .header {
+            margin-bottom: 36px;
+        }
+
+        .title {
+            font-size: clamp(2.2rem, 12vw, 3rem);
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .subtitle2 {
+            font-size: 1rem;
+        }
+
+        .sectionPortfolio {
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+        }
     }
 
 </style>

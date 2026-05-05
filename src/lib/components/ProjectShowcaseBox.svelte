@@ -42,20 +42,44 @@
 		/*border-collapse: collapse;*/
 		display: flex;
 		flex-direction: row;
+		align-items: flex-start;
+		gap: 20px;
 		border-radius: 8px;
 		padding: 20px;
 		transition: background-color 500ms, border-color 500ms, box-shadow 500ms;
 	}
-	.projectShowcaseBox:hover {
+	.project-showcase-content {
+		flex: 1;
+		min-width: 0;
 	}
 	.projectShowcaseVisual {
-		margin-right: 20px;
+		flex-shrink: 0;
 		width: 280px;
-		height: 158px;
+		max-width: 100%;
+		aspect-ratio: 16 / 9;
 	}
+	.projectShowcaseVisual video,
 	.projectShowcaseVisual :global(.plyr) {
-		width: 280px;
-		height: 158px;
+		width: 100%;
+		height: 100%;
 		border-radius: 8px;
+	}
+
+	@media (max-width: 900px) {
+		.projectShowcaseBox {
+			flex-direction: column;
+			padding: 18px;
+		}
+
+		.projectShowcaseVisual {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.projectShowcaseBox {
+			padding: 16px;
+			gap: 16px;
+		}
 	}
 </style>
