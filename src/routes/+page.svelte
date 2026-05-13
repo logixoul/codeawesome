@@ -59,6 +59,7 @@
                 <p>Моделиране на капки разтопено стъкло</p>
                 <p>Не-физично-базиран алгоритъм, базиран на "image processing" техники (blur, contrast curves).</p>
                 <a href="https://experiments.stefanteaches.eu/glass-modeling/">Пробвай го в браузъра си!</a>
+                <a href="https://github.com/logixoul/html_blurworld">Сорс код в GitHub</a>
                 <p><strong>Език</strong>: TypeScript</p>
                 <p><strong>Библиотеки:</strong> Three.js, WebGL 2</p>
                 '
@@ -67,11 +68,12 @@
 			<ProjectShowcaseBox
 				title="Флуидна симулация"
                 videoUrl="https://content.stefanteaches.eu/videos/grid-based-fluid-purple.mp4"
-				description="
+				description='
                     <p>Базирана на двумерен масив, а не на частици (particles).</p>
+                    <a href="https://github.com/logixoul/shade-awesome">Сорс код в GitHub</a>
                     <p><strong>Език</strong>: C++</p>
                     <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
-                    "
+                    '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
             <ProjectShowcaseBox
@@ -87,11 +89,33 @@
             <ProjectShowcaseBox
 				title="Мултимащабно анти-изглаждане"
                 videoUrl="https://content.stefanteaches.eu/videos/multiscale-growth-sharp.mp4"
+				description='
+                    <p>Експеримент с еволюиращи форми. Работи едновременно на различни мащаби - фин, среден, едър.</p>
+                    <a href="https://github.com/logixoul/shade-awesome">Сорс код в GitHub</a>
+                    <p><strong>Език</strong>: C++</p>
+                    <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
+                    '
+				onclick={setCurrentSlideout}
+			></ProjectShowcaseBox>
+            <ProjectShowcaseBox
+				title="HSL-оцветени боички"
+                videoUrl="https://content.stefanteaches.eu/videos/octave-hsv.mp4"
 				description="
-                    <p>Визуален експеримент. Работи едновременно на различни мащаби - фин, среден, едър.</p>
+                    <p>Двукомпонентен perlin-noise + оцветяване с цветовото пространство HSL.</p>
                     <p><strong>Език</strong>: C++</p>
                     <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
                     "
+				onclick={setCurrentSlideout}
+			></ProjectShowcaseBox>
+            <ProjectShowcaseBox
+				title="Цветни частици, оставящи следи"
+                videoUrl="https://content.stefanteaches.eu/videos/particle-traces-2d.mp4"
+				description='
+                    <p>Частиците ги носи вихър изчислен чрез т.нар. "curl noise".</p>
+                    <a href="https://github.com/logixoul/shade-awesome">Сорс код в GitHub</a>
+                    <p><strong>Език</strong>: C++</p>
+                    <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
+                    '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
 		</div>
