@@ -61,7 +61,7 @@
                 <a href="https://experiments.stefanteaches.eu/glass-modeling/">Пробвай го в браузъра си!</a>
                 <a href="https://github.com/logixoul/html_blurworld">Сорс код в GitHub</a>
                 <p><strong>Език</strong>: TypeScript</p>
-                <p><strong>Библиотеки:</strong> Three.js, WebGL 2</p>
+                <p><strong>Библиотеки:</strong> Three.js, WebGL</p>
                 '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
@@ -72,7 +72,7 @@
                     <p>Базирана на двумерен масив, а не на частици (particles).</p>
                     <a href="https://github.com/logixoul/shade-awesome">Сорс код в GitHub</a>
                     <p><strong>Език</strong>: C++</p>
-                    <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
+                    <p><strong>Библиотеки</strong>: glfw, OpenGL</p>
                     '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
@@ -93,7 +93,7 @@
                     <p>Експеримент с еволюиращи форми. Работи едновременно на различни мащаби - фин, среден, едър.</p>
                     <a href="https://github.com/logixoul/shade-awesome">Сорс код в GitHub</a>
                     <p><strong>Език</strong>: C++</p>
-                    <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
+                    <p><strong>Библиотеки</strong>: glfw, OpenGL</p>
                     '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
@@ -108,13 +108,25 @@
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
             <ProjectShowcaseBox
-				title="Цветни частици, оставящи следи"
+				title="Цветни частици, оставящи следи (3D)"
+                videoUrl="https://content.stefanteaches.eu/videos/particle-traces-3d.mp4"
+				description='
+                    <p>Частиците ги носи вихър изчислен чрез т.нар. "curl noise".</p>
+                    <p><a href="https://experiments.stefanteaches.eu/traces-3d">Пробвай го в браузъра си!</a></p>
+                    <p><a href="https://github.com/logixoul/particle-traces-js-2025">Сорс код в GitHub</a></p>
+                    <p><strong>Език</strong>: TypeScript</p>
+                    <p><strong>Библиотеки</strong>: Three.js, WebGL</p>
+                    '
+				onclick={setCurrentSlideout}
+			></ProjectShowcaseBox>
+            <ProjectShowcaseBox
+				title="Цветни частици, оставящи следи (2D)"
                 videoUrl="https://content.stefanteaches.eu/videos/particle-traces-2d.mp4"
 				description='
                     <p>Частиците ги носи вихър изчислен чрез т.нар. "curl noise".</p>
                     <a href="https://github.com/logixoul/shade-awesome">Сорс код в GitHub</a>
                     <p><strong>Език</strong>: C++</p>
-                    <p><strong>Библиотеки</strong>: libcinder, OpenGL</p>
+                    <p><strong>Библиотеки</strong>: glfw, OpenGL</p>
                     '
 				onclick={setCurrentSlideout}
 			></ProjectShowcaseBox>
