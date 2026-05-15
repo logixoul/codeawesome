@@ -179,7 +179,8 @@
 		min-height: 100dvh;
 		background-color: #ffffff;
         background-image: url('/images/watercolor.jpg');
-        background-size: cover;
+        background-size: 100% auto; 
+        background-repeat: repeat-y;
         box-shadow:
             inset 0 4px 1px #ffffff80,
             0 0 120px #000000ff,
@@ -204,10 +205,6 @@
 
         .sectionPortfolio .cards-grid {
             grid-template-columns: 1fr;
-        }
-
-        .sectionPortfolio {
-            background-size: contain;
         }
     }
 
